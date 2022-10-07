@@ -132,18 +132,6 @@ const password = document.getElementsByName("password");
 const imageFile = document.getElementsByName("imageFile");
 
 function displayInfo() {
-  // const firstName = document.getElementsByName("firstName")[0];
-  // const lastName = document.getElementsByName("lastName")[0];
-  // const birthDate = document.getElementsByName("birthDate")[0];
-  // const nationality = document.getElementsByName("nationality")[0];
-  // const address = document.getElementsByName("address")[0];
-  // // const houseNumber = document.getElementsByName("houseNumber")[0];
-  // // const zipCode = document.getElementsByName("zipCode")[0];
-  // const username = document.getElementsByName("username")[0];
-  // const password = document.getElementsByName("password")[0];
-  // const passwordRepeat = document.getElementsByName("password-repeat")[0];
-  // const imageFile = document.getElementsByName("imageFile");
-
   document.getElementById("nameLabel").textContent =
     firstName[0].value + " " + lastName[0].value;
 
@@ -158,14 +146,9 @@ function displayInfo() {
     "C:\\fakepath\\",
     "./images/"
   );
-  // } else {
-  //   alert("Please fill all the fields");
-  // }
 }
 
 function submitForm() {
-  // checkValid();
-
   console.log(`Form Submitted`);
   const data = {
     name: firstName[0].value + " " + lastName[0].value,
