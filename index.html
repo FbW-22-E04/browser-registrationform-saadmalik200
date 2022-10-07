@@ -229,9 +229,9 @@
           <option value="thai">Thai</option>
           <option value="togolese">Togolese</option>
           <option value="tongan">Tongan</option>
-          <option value="trinidadian or tobagonian"
-            >Trinidadian or Tobagonian</option
-          >
+          <option value="trinidadian or tobagonian"></option>
+            Trinidadian or Tobagonian
+          </option>
           <option value="tunisian">Tunisian</option>
           <option value="turkish">Turkish</option>
           <option value="tuvaluan">Tuvaluan</option>
@@ -254,7 +254,11 @@
           <input type="password" placeholder="Repeat Password" name="psw-repeat" required> -->
         <hr />
 
-        <button type="button" class="registerbtn" onclick="nextDiv(this)">
+        <button
+          type="button"
+          class="registerbtn"
+          onclick="nextDiv(this)"
+        >
           Next
         </button>
       </div>
@@ -291,8 +295,9 @@
           type="button"
           class="registerbtn"
         >
-          previous</button
-        ><button type="button" class="registerbtn" onclick="nextDiv(this)">
+          Previous</button
+        >
+        <button type="button" class="registerbtn" onclick="nextDiv(this)">
           Next
         </button>
       </div>
@@ -336,7 +341,7 @@
         <hr />
 
         <button type="button" onclick="previous(this)" class="registerbtn">
-          previous</button
+          Previous</button
         ><button type="button" class="registerbtn" onclick="nextDiv(this)">
           Next
         </button>
@@ -362,11 +367,14 @@
         <img id="photoLabel" />
         <hr />
         <button type="button" class="registerbtn" onclick="previous(this)">
-          previous
+          Previous
+        </button>
+          <button type="button" class="registerbtn" onclick="submitForm(this)">
+          Submit Form
         </button>
       </div>
     </form>
 
-    <script src="js/index.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>
