@@ -30,45 +30,89 @@ function previous(element) {
 }
 
 function nextDiv(element) {
+  const firstName = document.getElementsByName("firstName")[0].checkValidity();
+  // console.log(firstName);
+  const lastName = document.getElementsByName("lastName")[0].checkValidity();
+  const birthDate = document.getElementsByName("birthDate")[0].checkValidity();
+  const nationality = document
+    .getElementsByName("nationality")[0]
+    .checkValidity();
+  const address = document.getElementsByName("address")[0].checkValidity();
+  const houseNumber = document
+    .getElementsByName("houseNumber")[0]
+    .checkValidity();
+  const zipCode = document.getElementsByName("zipCode")[0].checkValidity();
+  const username = document.getElementsByName("username")[0].checkValidity();
+  const password = document.getElementsByName("password")[0].checkValidity();
+  const passwordRepeat = document
+    .getElementsByName("password-repeat")[0]
+    .checkValidity();
+
+  const passwordMatch =
+    document.getElementsByName("password")[0].value ===
+    document.getElementsByName("password-repeat")[0].value;
+  const imageFile = document.getElementsByName("imageFile")[0].checkValidity();
+
   // console.log(element.parentNode);
   // console.log(element.parentElement.nextElementSibling);
-  let fatherDiv = element.parentElement.nextElementSibling.id;
 
   // element.parentNode.style.display = "none";
   // element.parentElement.nextElementSibling.style.display = "block";
 
+  let fatherDiv = element.parentElement.nextElementSibling.id;
+
   switch (fatherDiv) {
     case "personalDiv":
-      element.parentNode.style.display = "none";
-      element.parentElement.nextElementSibling.style.display = "block";
+      if (firstName && lastName && birthDate && nationality) {
+        element.parentNode.style.display = "none";
+        element.parentElement.nextElementSibling.style.display = "block";
 
-      document.getElementById("personalDiv").style.display = "none";
-      document.getElementById("profileDiv").style.display = "none";
-      document.getElementById("resultDiv").style.display = "none";
+        document.getElementById("personalDiv").style.display = "none";
+        document.getElementById("profileDiv").style.display = "none";
+        document.getElementById("resultDiv").style.display = "none";
+      } else {
+        alert("You have invalid enteries!!");
+      }
       break;
     case "addressDiv":
-      element.parentNode.style.display = "none";
-      element.parentElement.nextElementSibling.style.display = "block";
-      document.getElementById("personalDiv").style.display = "none";
-      document.getElementById("profileDiv").style.display = "none";
-      document.getElementById("resultDiv").style.display = "none";
+      if (firstName && lastName && birthDate && nationality) {
+        element.parentNode.style.display = "none";
+        element.parentElement.nextElementSibling.style.display = "block";
+        document.getElementById("personalDiv").style.display = "none";
+        document.getElementById("profileDiv").style.display = "none";
+        document.getElementById("resultDiv").style.display = "none";
+      } else {
+        alert("You have invalid enteries!!");
+      }
       break;
     case "profileDiv":
-      element.parentNode.style.display = "none";
-      element.parentElement.nextElementSibling.style.display = "block";
-      document.getElementById("personalDiv").style.display = "none";
-      document.getElementById("addressDiv").style.display = "none";
-      document.getElementById("resultDiv").style.display = "none";
-
+      if (address && houseNumber && zipCode) {
+        element.parentNode.style.display = "none";
+        element.parentElement.nextElementSibling.style.display = "block";
+        document.getElementById("personalDiv").style.display = "none";
+        document.getElementById("addressDiv").style.display = "none";
+        document.getElementById("resultDiv").style.display = "none";
+      } else {
+        alert("You have invalid enteries!!");
+      }
       break;
     case "resultDiv":
-      displayInfo();
-      element.parentNode.style.display = "none";
-      element.parentElement.nextElementSibling.style.display = "block";
-      document.getElementById("personalDiv").style.display = "none";
-      document.getElementById("addressDiv").style.display = "none";
-      document.getElementById("profileDiv").style.display = "none";
-
+      if (
+        username &&
+        password &&
+        passwordRepeat &&
+        passwordMatch &&
+        imageFile
+      ) {
+        displayInfo();
+        element.parentNode.style.display = "none";
+        element.parentElement.nextElementSibling.style.display = "block";
+        document.getElementById("personalDiv").style.display = "none";
+        document.getElementById("addressDiv").style.display = "none";
+        document.getElementById("profileDiv").style.display = "none";
+      } else {
+        alert("You have invalid enteries!!");
+      }
       break;
 
     default:
@@ -81,14 +125,25 @@ const lastName = document.getElementsByName("lastName");
 const birthDate = document.getElementsByName("birthDate");
 const nationality = document.getElementsByName("nationality");
 const address = document.getElementsByName("address");
-const houseNumber = document.getElementsByName("houseNumber");
-const zipCode = document.getElementsByName("zipCode");
+
 const username = document.getElementsByName("username");
 const password = document.getElementsByName("password");
-const passwordRepeat = document.getElementsByName("password-repeat");
+
 const imageFile = document.getElementsByName("imageFile");
 
 function displayInfo() {
+  // const firstName = document.getElementsByName("firstName")[0];
+  // const lastName = document.getElementsByName("lastName")[0];
+  // const birthDate = document.getElementsByName("birthDate")[0];
+  // const nationality = document.getElementsByName("nationality")[0];
+  // const address = document.getElementsByName("address")[0];
+  // // const houseNumber = document.getElementsByName("houseNumber")[0];
+  // // const zipCode = document.getElementsByName("zipCode")[0];
+  // const username = document.getElementsByName("username")[0];
+  // const password = document.getElementsByName("password")[0];
+  // const passwordRepeat = document.getElementsByName("password-repeat")[0];
+  // const imageFile = document.getElementsByName("imageFile");
+
   document.getElementById("nameLabel").textContent =
     firstName[0].value + " " + lastName[0].value;
 
@@ -103,9 +158,14 @@ function displayInfo() {
     "C:\\fakepath\\",
     "./images/"
   );
+  // } else {
+  //   alert("Please fill all the fields");
+  // }
 }
 
 function submitForm() {
+  // checkValid();
+
   console.log(`Form Submitted`);
   const data = {
     name: firstName[0].value + " " + lastName[0].value,
